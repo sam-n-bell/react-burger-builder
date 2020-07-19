@@ -1,11 +1,16 @@
 import React from 'react'
 import modalStyles from './Modal.module.css'
+import Backdrop from '../Backdrop/Backdrop'
+import Aux from '../../../hoc/Aux'
 
 const Modal = (props) => {
     return (
-        <div className={modalStyles.Modal}>
-            {props.children}
-        </div>
+        <Aux>
+            <Backdrop clicked={props.modalClicked}/>
+            <div className={modalStyles.Modal}>
+                {props.children}
+            </div>
+        </Aux>
     )
 }
 

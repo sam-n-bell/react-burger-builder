@@ -4,7 +4,7 @@ import controlStyles from './BuildControl.module.css';
 const BuildControl = (props) => {
     return (
         <div className={controlStyles.BuildControl}>
-            <div className={controlStyles.Label}>{props.label}</div>
+            <div className={controlStyles.Label}>{props.label} (${props.price.toFixed(2)} each)</div>
             <button 
             disabled={props.disabled} 
             onClick={props.removed} 
