@@ -1,16 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 import navigationStyles from './NavigationItem.module.css'
 
 const NavigationItem = (props) => {
+    // exact helps with identifying active page in the navbar, so the / doesnt make all nav links show active
     return (
         <li className={navigationStyles.NavigationItem}>
-            <a
-                href={props.link}
-                className={
-                    props.active ? navigationStyles.active : null
-                }>
+            <NavLink
+                to={props.link}
+                exact
+                activeClassName={navigationStyles.active}>
                 {props.children}
-            </a>
+            </NavLink>
         </li>
     )
 }
